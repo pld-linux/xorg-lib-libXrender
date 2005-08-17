@@ -17,6 +17,9 @@ BuildRequires:	libtool
 BuildRequires:	pkg-config
 BuildRequires:	xorg-proto-renderproto-devel
 BuildRequires:	xorg-util-util-macros
+Obsoletes:	XFree86-render
+Obsoletes:	libXrender
+Obsoletes:	xrender
 BuildRoot:	%{tmpdir}/libXrender-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -35,6 +38,9 @@ Group:		X11/Development/Libraries
 Requires:	xorg-lib-libXrender = %{version}-%{release}
 Requires:	xorg-lib-libX11-devel
 Requires:	xorg-proto-renderproto-devel
+Obsoletes:	XFree86-render-devel
+Obsoletes:	libXrender-devel
+Obsoletes:	xrender-devel
 
 %description devel
 X Render extension library.
@@ -54,6 +60,9 @@ Summary:	Static libXrender libraries
 Summary(pl):	Biblioteki statyczne libXrender
 Group:		Development/Libraries
 Requires:	xorg-lib-libXrender-devel = %{version}-%{release}
+Obsoletes:	XFree86-render-static
+Obsoletes:	libXrender-static
+Obsoletes:	xrender-static
 
 %description static
 X Render extension library.
