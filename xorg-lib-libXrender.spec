@@ -1,5 +1,3 @@
-
-#
 Summary:	X Render extension library
 Summary(pl):	Biblioteka rozszerzenia X Render
 Name:		xorg-lib-libXrender
@@ -12,15 +10,15 @@ Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/lib/libXrender-%{version}.tar.b
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 0.19
+BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-proto-renderproto-devel
 BuildRequires:	xorg-util-util-macros
 Obsoletes:	XFree86-render
 Obsoletes:	libXrender
 Obsoletes:	xrender
-BuildRoot:	%{tmpdir}/libXrender-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 
@@ -30,12 +28,11 @@ X Render extension library.
 %description -l pl
 Biblioteka rozszerzenia X Render.
 
-
 %package devel
 Summary:	Header files libXrender development
 Summary(pl):	Pliki nag³ówkowe do biblioteki libXrender
 Group:		X11/Development/Libraries
-Requires:	xorg-lib-libXrender = %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libX11-devel
 Requires:	xorg-proto-renderproto-devel
 Obsoletes:	XFree86-render-devel
@@ -54,12 +51,11 @@ Biblioteka rozszerzenia X Render.
 Pakiet zawiera pliki nag³ówkowe niezbêdne do kompilowania programów
 u¿ywaj±cych biblioteki libXrender.
 
-
 %package static
-Summary:	Static libXrender libraries
-Summary(pl):	Biblioteki statyczne libXrender
-Group:		Development/Libraries
-Requires:	xorg-lib-libXrender-devel = %{version}-%{release}
+Summary:	Static libXrender library
+Summary(pl):	Biblioteka statyczna libXrender
+Group:		X11/Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	XFree86-render-static
 Obsoletes:	libXrender-static
 Obsoletes:	xrender-static
@@ -74,10 +70,8 @@ Biblioteka rozszerzenia X Render.
 
 Pakiet zawiera statyczn± bibliotekê libXrender.
 
-
 %prep
 %setup -q -n libXrender-%{version}
-
 
 %build
 %{__libtoolize}
@@ -101,20 +95,17 @@ rm -rf $RPM_BUILD_ROOT
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog
-%attr(755,root,wheel) %{_libdir}/libXrender.so.*
-
+%attr(755,root,root) %{_libdir}/libXrender.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/X11/extensions/*.h
+%attr(755,root,root) %{_libdir}/libXrender.so
 %{_libdir}/libXrender.la
-%attr(755,root,wheel) %{_libdir}/libXrender.so
+%{_includedir}/X11/extensions/*.h
 %{_pkgconfigdir}/xrender.pc
-
 
 %files static
 %defattr(644,root,root,755)
