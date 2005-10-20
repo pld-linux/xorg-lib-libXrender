@@ -2,18 +2,18 @@ Summary:	X Render extension library
 Summary(pl):	Biblioteka rozszerzenia X Render
 Name:		xorg-lib-libXrender
 Version:	0.9.0
-Release:	0.02
+Release:	0.1
 License:	MIT
 Group:		X11/Libraries
-Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/lib/libXrender-%{version}.tar.bz2
-# Source0-md5:	0064c7d11a9c6e7cb901f840bb6ba877
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC1/lib/libXrender-%{version}.tar.bz2
+# Source0-md5:	8d129dc604e8b85955828701e7d55d7e
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-lib-libX11-devel
-BuildRequires:	xorg-proto-renderproto-devel
+BuildRequires:	xorg-proto-renderproto-devel >= 0.9
 BuildRequires:	xorg-util-util-macros
 Obsoletes:	XFree86-render
 Obsoletes:	libXrender
@@ -32,7 +32,7 @@ Summary(pl):	Pliki nag³ówkowe do biblioteki libXrender
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libX11-devel
-Requires:	xorg-proto-renderproto-devel
+Requires:	xorg-proto-renderproto-devel >= 0.9
 Obsoletes:	XFree86-render-devel
 Obsoletes:	libXrender-devel
 Obsoletes:	xrender-devel
@@ -95,7 +95,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog
+%doc AUTHORS COPYING ChangeLog
 %attr(755,root,root) %{_libdir}/libXrender.so.*.*.*
 
 %files devel
