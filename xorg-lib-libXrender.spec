@@ -27,8 +27,8 @@ X Render extension library.
 Biblioteka rozszerzenia X Render.
 
 %package devel
-Summary:	Header files libXrender development
-Summary(pl):	Pliki nag³ówkowe do biblioteki libXrender
+Summary:	Header files for libXrender library
+Summary(pl):	Pliki nag³ówkowe biblioteki libXrender
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libX11-devel
@@ -41,7 +41,7 @@ Obsoletes:	xrender-devel
 X Render extension library.
 
 This package contains the header files needed to develop programs that
-use these libXrender.
+use libXrender.
 
 %description devel -l pl
 Biblioteka rozszerzenia X Render.
