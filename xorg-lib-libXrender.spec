@@ -5,8 +5,8 @@ Version:	0.9.0.2
 Release:	0.1
 License:	MIT
 Group:		X11/Libraries
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC4/lib/libXrender-%{version}.tar.bz2
-# Source0-md5:	1d6a1bf605bb3a270963c186d4cdfc4d
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/lib/libXrender-%{version}.tar.bz2
+# Source0-md5:	81cdd3c9f16c50266d828670bf672c4c
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
