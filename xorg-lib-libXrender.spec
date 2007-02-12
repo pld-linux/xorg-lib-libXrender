@@ -1,5 +1,5 @@
 Summary:	X Render extension library
-Summary(pl):	Biblioteka rozszerzenia X Render
+Summary(pl.UTF-8):   Biblioteka rozszerzenia X Render
 Name:		xorg-lib-libXrender
 Version:	0.9.2
 Release:	3
@@ -23,12 +23,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 X Render extension library.
 
-%description -l pl
+%description -l pl.UTF-8
 Biblioteka rozszerzenia X Render.
 
 %package devel
 Summary:	Header files for libXrender library
-Summary(pl):	Pliki nag³ówkowe biblioteki libXrender
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki libXrender
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libX11-devel
@@ -43,15 +43,15 @@ X Render extension library.
 This package contains the header files needed to develop programs that
 use libXrender.
 
-%description devel -l pl
+%description devel -l pl.UTF-8
 Biblioteka rozszerzenia X Render.
 
-Pakiet zawiera pliki nag³ówkowe niezbêdne do kompilowania programów
-u¿ywaj±cych biblioteki libXrender.
+Pakiet zawiera pliki nagÅ‚Ã³wkowe niezbÄ™dne do kompilowania programÃ³w
+uÅ¼ywajÄ…cych biblioteki libXrender.
 
 %package static
 Summary:	Static libXrender library
-Summary(pl):	Biblioteka statyczna libXrender
+Summary(pl.UTF-8):   Biblioteka statyczna libXrender
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	XFree86-render-static
@@ -63,10 +63,10 @@ X Render extension library.
 
 This package contains the static libXrender library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka rozszerzenia X Render.
 
-Pakiet zawiera statyczn± bibliotekê libXrender.
+Pakiet zawiera statycznÄ… bibliotekÄ™ libXrender.
 
 %prep
 %setup -q -n libXrender-%{version}
