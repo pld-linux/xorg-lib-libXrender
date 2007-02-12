@@ -1,5 +1,5 @@
 Summary:	X Render extension library
-Summary(pl.UTF-8):   Biblioteka rozszerzenia X Render
+Summary(pl.UTF-8):	Biblioteka rozszerzenia X Render
 Name:		xorg-lib-libXrender
 Version:	0.9.2
 Release:	3
@@ -28,7 +28,7 @@ Biblioteka rozszerzenia X Render.
 
 %package devel
 Summary:	Header files for libXrender library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libXrender
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libXrender
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libX11-devel
@@ -51,7 +51,7 @@ używających biblioteki libXrender.
 
 %package static
 Summary:	Static libXrender library
-Summary(pl.UTF-8):   Biblioteka statyczna libXrender
+Summary(pl.UTF-8):	Biblioteka statyczna libXrender
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	XFree86-render-static
