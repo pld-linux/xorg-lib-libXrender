@@ -14,7 +14,7 @@ BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-proto-renderproto-devel >= 0.9
-BuildRequires:	xorg-util-util-macros >= 0.99.2
+BuildRequires:	xorg-util-util-macros >= 1.3
 Obsoletes:	XFree86-render
 Obsoletes:	libXrender
 Obsoletes:	xrender
@@ -95,8 +95,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog
+%doc AUTHORS COPYING ChangeLog README doc/libXrender.txt
 %attr(755,root,root) %{_libdir}/libXrender.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libXrender.so.1
 
 %files devel
 %defattr(644,root,root,755)
