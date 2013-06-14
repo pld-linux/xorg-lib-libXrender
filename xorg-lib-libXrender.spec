@@ -1,12 +1,12 @@
 Summary:	X Render extension library
 Summary(pl.UTF-8):	Biblioteka rozszerzenia X Render
 Name:		xorg-lib-libXrender
-Version:	0.9.7
+Version:	0.9.8
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXrender-%{version}.tar.bz2
-# Source0-md5:	ee62f4c7f0f16ced4da63308963ccad2
+# Source0-md5:	2bd9a15fcf64d216e63b8d129e4f1f1c
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
@@ -104,7 +104,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc doc/libXrender.txt
 %attr(755,root,root) %{_libdir}/libXrender.so
 %{_libdir}/libXrender.la
-%{_includedir}/X11/extensions/*.h
+%{_includedir}/X11/extensions/Xrender.h
 %{_pkgconfigdir}/xrender.pc
 
 %files static
