@@ -1,24 +1,26 @@
 Summary:	X Render extension library
 Summary(pl.UTF-8):	Biblioteka rozszerzenia X Render
 Name:		xorg-lib-libXrender
-Version:	0.9.10
+Version:	0.9.11
 Release:	1
 License:	MIT
 Group:		X11/Libraries
-Source0:	https://xorg.freedesktop.org/releases/individual/lib/libXrender-%{version}.tar.bz2
-# Source0-md5:	802179a76bded0b658f4e9ec5e1830a4
+Source0:	https://xorg.freedesktop.org/releases/individual/lib/libXrender-%{version}.tar.xz
+# Source0-md5:	ebf7fb3241ec03e8a3b2af72f03b4631
 URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libX11-devel >= 1.6
 BuildRequires:	xorg-proto-renderproto-devel >= 0.9
 BuildRequires:	xorg-util-util-macros >= 1.8
+BuildRequires:	xz
 Requires:	xorg-lib-libX11 >= 1.6
-Obsoletes:	XFree86-render
-Obsoletes:	libXrender
-Obsoletes:	xrender
+Obsoletes:	XFree86-render < 4.4
+Obsoletes:	libXrender < 0.9
+Obsoletes:	xrender < 0.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -34,9 +36,9 @@ Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libX11-devel >= 1.6
 Requires:	xorg-proto-renderproto-devel >= 0.9
-Obsoletes:	XFree86-render-devel
-Obsoletes:	libXrender-devel
-Obsoletes:	xrender-devel
+Obsoletes:	XFree86-render-devel < 4.4
+Obsoletes:	libXrender-devel < 0.9
+Obsoletes:	xrender-devel < 0.9
 
 %description devel
 X Render extension library.
@@ -55,9 +57,9 @@ Summary:	Static libXrender library
 Summary(pl.UTF-8):	Biblioteka statyczna libXrender
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
-Obsoletes:	XFree86-render-static
-Obsoletes:	libXrender-static
-Obsoletes:	xrender-static
+Obsoletes:	XFree86-render-static < 4.4
+Obsoletes:	libXrender-static < 0.9
+Obsoletes:	xrender-static < 0.9
 
 %description static
 X Render extension library.
@@ -85,8 +87,7 @@ Pakiet zawiera statyczną bibliotekę libXrender.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	pkgconfigdir=%{_pkgconfigdir}
+	DESTDIR=$RPM_BUILD_ROOT
 
 # packaged as %doc
 %{__rm} $RPM_BUILD_ROOT%{_docdir}/libXrender/libXrender.txt
@@ -99,7 +100,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog README
+%doc AUTHORS COPYING ChangeLog README.md
 %attr(755,root,root) %{_libdir}/libXrender.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libXrender.so.1
 
